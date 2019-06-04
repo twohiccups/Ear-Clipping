@@ -86,7 +86,6 @@ function triangulate(points) {
             }
         }
         i++; 
-        if (i > points.length * points.length * points.length) break;
     } 
     triangles.push(new Triangle(points[0], points[1], points[2]));
     setTimeout(function () {drawTriangles(triangles);}, interval);
