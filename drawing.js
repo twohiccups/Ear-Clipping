@@ -35,11 +35,9 @@ canvas.addEventListener('click', function(e) {
 });
 
 button.addEventListener('click', function() {
-    console.log(points);
-    triangulate(points);
-
     if (points.length > 2) {
         connectPoints(points[points.length-1], points[0]);
+        triangulate(points);
     }
     else {
         alert('Needs at least three points');
