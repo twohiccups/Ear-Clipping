@@ -45,6 +45,17 @@ button.addEventListener('click', function() {
 });
 
 
+function createPoint(x, y) {
+    var cir = document.createElementNS(ns, 'circle');
+    cir.setAttributeNS(null, 'cx', x);
+    cir.setAttributeNS(null, 'cy', y);
+    cir.setAttributeNS(null, 'r', 4);
+    cir.setAttributeNS(null, 'fill', 'black');
+    canvas.appendChild(cir);
+    var point = new Point(x,y,cir);
+    return point;
+}
+
 function labelPoints(points) {
         for(var i = 0; i < points.length; i++) {
             var textNode = document.createElementNS(ns, 'text');
@@ -120,3 +131,19 @@ function drawTriangles(triangles) {
 function clearCanvas() {
      canvas.innerHTML = '';
 }
+
+
+function triangulateBull() {
+    reset();
+    points = [];
+    for (var i = 0; i < bull.length; i++) {
+        points.push(createPoint(bull[i].x, bull[i].y));
+    }
+    for (var i = 0; i < points.length - 1; i++) {
+        connectPoints(points[i], points[i+1]);
+    }
+    connectPoints(points[points.length-1], points[0]);
+    triangulate(points);
+}
+
+

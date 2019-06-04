@@ -13,16 +13,6 @@ function Point(x, y, c) {
     this.c = c;
 }
 
-function createPoint(x, y) {
-    var cir = document.createElementNS(ns, 'circle');
-    cir.setAttributeNS(null, 'cx', x);
-    cir.setAttributeNS(null, 'cy', y);
-    cir.setAttributeNS(null, 'r', 4);
-    cir.setAttributeNS(null, 'fill', 'black');
-    canvas.appendChild(cir);
-    var point = new Point(x,y,cir);
-    return point;
-}
 
 function distanceSq(a, b) {
     return (a.x-b.x) * (a.x-b.x) + (a.y-b.y) * (a.y-b.y); 
