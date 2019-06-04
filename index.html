@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        </head>
+    
+    
+    <body>
+        <style>
+            body {
+                background-color: floralwhite;
+            }
+        </style>
+        
+        <div class="container text-center ">
+            <div class="row my-2">
+                <div class="col-12">
+                    <h1 class="text-success">Ear-Clipping Triangulation</h1>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 text-justify">
+                    <h3>While not the most efficient <a href="https://en.wikipedia.org/wiki/Polygon_triangulation">triangulation</a> algorithm, it is the most intuitive. An ear of a polygon is a vertex V, such that the line segment between the two neighbors of V lies entirely inside the polygon. In fact, every simple polygon with more than three vertices has at least two ears. Here you can check out the <a href="http://www.personal.kent.edu/~rmuhamma/Compgeometry/MyCG/TwoEar/two-ear.htm">proof</a> of the Two Ear theorem. Meanwhile, we will move counter-clockwise along the polygon and repeatedly cut off ears one by one until we are left with only one triangle. Enjoy this small demo!
+                    </h3>
+                </div>
+            </div>
+            
+            <div class="row my-3">
+                <div class="col-12 text-justify">
+                    <h3> Click on the canvas to place some vertices. When you press "Start!" I  will connect origin to the last point. You should avoid overlaps, otherwise
+            results will be weird.
+                    </h3>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-12">
+                    <svg id="triangulation" width="1000" height="600"></svg>
+                </div>
+            </div>
+            <div class="row justify-content-center my-2">
+                <div class="col-sm-4"> 
+                </div>
+                <div class="col-sm-4">
+                    <button id="button" class="button btn-light rounded h4 p-2" type="button">Start!</button>
+                    <button id="labels" class="button btn-light rounded h4 p-2" type="button" onclick="toggleLables()">Labels</button>
+                    <button id="clear"  class="button btn-light rounded h4 p-2" onclick="reset()">Clear</button> 
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </div>
+        
+<script type="text/javascript" src="triangulation.js"></script>
+<script type="text/javascript" src="drawing.js"></script>
+
+        
+        
+        
+</body>
+</html> 
+
